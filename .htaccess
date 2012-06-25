@@ -1,0 +1,12 @@
+Options -MultiViews -Indexes
+Options +FollowSymLinks
+
+AddHandler cgi-script .py
+Options +ExecCGI
+DirectoryIndex index.py
+
+# Deny access to INI configuration and Template files
+<FilesMatch "\.(ini|tpl)">
+Order allow,deny
+Deny from all
+</FilesMatch>

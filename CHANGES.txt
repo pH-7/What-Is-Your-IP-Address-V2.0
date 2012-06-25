@@ -1,0 +1,9 @@
+------ VERSION 2.0 (06-26-12) ------
+
+1. Adding the Google Geo Map support.
+2. Add icons of flags.
+3. Add information about the location.
+4. More customization.
+5. Improved script.
+6. Adding new variables to the template.
+7. Now licensed under: General Public License (GPL) 3 or later (http://www.gnu.org/copyleft/gpl.html).
