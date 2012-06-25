@@ -55,8 +55,8 @@ def geo_ip(ip_address, what):
     return data["city"]
 
 
-# Get Country Flag
-def country_flag():
+# Get the URL of Country Flag Icon
+def country_flag_url():
   icon = geo_ip(ip_address, 'country_code') + '.gif'
   url_flag = config.get("webapp", "url") + 'static/img/flag/'
   
@@ -93,7 +93,7 @@ html = html.replace("{analytics_id}", config.get("api", "analytics_id"))
 html = html.replace("{contact_email}", config.get("general", "contact_email"))
 
 html = html.replace("{ip}", ip_address)
-html = html.replace("{url_flag}", country_flag())
+html = html.replace("{url_flag}", country_flag_url())
 html = html.replace("{country}", geo_ip(ip_address, 'country'))
 html = html.replace("{city}", geo_ip(ip_address, 'city'))
 html = html.replace("{year_date}", str(datetime.today().year))
