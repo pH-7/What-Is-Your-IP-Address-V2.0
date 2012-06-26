@@ -62,7 +62,7 @@ def country_flag_url():
   
   try:
     urllib2.urlopen(urllib2.Request(url_flag + icon))
-    return url_flag + icon.lower() # Lower for the flag image
+    return url_flag + icon
   except:
     return url_flag + 'none.gif'
      
