@@ -46,7 +46,7 @@ def geo_ip(ip_address, what):
   json_url.close()
     
   if what == 'country_code':
-    return data["country_code"].lower() # Lower for the flag image
+    return data["country_code"]
 	  
   if what == 'country':
     return data["country_name"]
@@ -57,7 +57,7 @@ def geo_ip(ip_address, what):
 
 # Get the URL of Country Flag Icon
 def country_flag_url():
-  icon = geo_ip(ip_address, 'country_code') + '.gif'
+  icon = geo_ip(ip_address, 'country_code').lower() + '.gif' # Lower for the flag image
   url_flag = config.get("webapp", "url") + 'static/img/flag/'
   
   try:
