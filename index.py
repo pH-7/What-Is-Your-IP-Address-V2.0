@@ -46,7 +46,7 @@ def geo_ip(ip_address, what):
   json_url.close()
     
   if what == 'country_code':
-    return data["country_code"].lower() # Lower for the flag image
+    return data["country_code"]
 	  
   if what == 'country':
     return data["country_name"]
@@ -62,7 +62,7 @@ def country_flag_url():
   
   try:
     urllib2.urlopen(urllib2.Request(url_flag + icon))
-    return url_flag + icon
+    return url_flag + icon.lower() # Lower for the flag image
   except:
     return url_flag + 'none.gif'
      
